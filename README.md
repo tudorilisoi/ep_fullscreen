@@ -1,7 +1,7 @@
 # ep_fullscreen
 
 ## Function
-Adds a button in the toolbar to fill the browser viewport
+Adds a button in the toolbar to fill the browser viewport (i.e. the 'Toggle fullscreen' functionality)
 
 ## Settings
 use this repo which contains the button icons (embedded in the fontawesome font)
