@@ -1,0 +1,24 @@
+{
+  "description": "Switches a pad into full browser viewport and back",
+  "name": "ep_fullscreen",
+  "version": "0.0.4",
+  "author": {
+    "name": "Tudor Ilisoi",
+    "email": "tudorilisoi@yahoo.com"
+  },
+  "contributors": [],
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {},
+  
+  "maintainers": [
+    {
+      "name": "tudorilisoi",
+      "email": "tudorilisoi@yahoo.com"
+    }
+  ],
+  "directories": {},
+  "readme": "README.md"
+}
