@@ -1,7 +1,7 @@
 {
     "description": "Switches a pad into full browser viewport and back",
     "name": "ep_fullscreen",
-    "version": "0.0.5a",
+    "version": "0.0.5-a",
     "author": {
         "name": "Tudor Ilisoi",
         "email": "tudorilisoi@yahoo.com"
