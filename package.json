@@ -1,24 +1,26 @@
 {
-  "description": "Switches a pad into full browser viewport and back",
-  "name": "ep_fullscreen",
-  "version": "0.0.4",
-  "author": {
-    "name": "Tudor Ilisoi",
-    "email": "tudorilisoi@yahoo.com"
-  },
-  "contributors": [],
-  "dependencies": {},
-  "engines": {
-    "node": "*"
-  },
-  "devDependencies": {},
-  
-  "maintainers": [
-    {
-      "name": "tudorilisoi",
-      "email": "tudorilisoi@yahoo.com"
-    }
-  ],
-  "directories": {},
-  "readme": "README.md"
+    "description": "Switches a pad into full browser viewport and back",
+    "name": "ep_fullscreen",
+    "version": "0.0.5",
+    "author": {
+        "name": "Tudor Ilisoi",
+        "email": "tudorilisoi@yahoo.com"
+    },
+    "contributors": [],
+    "dependencies": {},
+    "engines": {
+        "node": "*"
+    },
+    "devDependencies": {},
+
+    "maintainers": [{
+        "name": "tudorilisoi",
+        "email": "tudorilisoi@yahoo.com"
+    }],
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/tudorilisoi/ep_fullscreen.git"
+    },
+    "directories": {},
+    "readme": "README.md"
 }
