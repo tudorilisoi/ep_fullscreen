@@ -1,13 +1,12 @@
-# ep_align
+# ep_fullscreen
 
 ## Function
-Adds options in the editbar to add justification to text IE Left, middle(center), right and justify.
+Adds a button in the toolbar to fill the browser viewport
 
 ## Settings
-None
+use this repo which contains the button icons
+<https://github.com/tudorilisoi/etherpad-lite>
+
+, or edit `editbarButtons.ejs` to style the button with CSS classes
 
 ## Todo
-Export support
-
-Want further functionality?
-http://mclear.co.uk/experience
