@@ -1,0 +1,13 @@
+{
+    "parts": [{
+        "name": "main",
+        "client_hooks": {
+            "postAceInit": "ep_fullscreen/static/js/index",
+            "documentReady": "ep_fullscreen/static/js/index"
+
+        },
+        "hooks": {
+            "eejsBlock_editbarMenuLeft": "ep_fullscreen/index"
+        }
+    }]
+}

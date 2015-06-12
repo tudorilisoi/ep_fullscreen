@@ -1,0 +1,36 @@
+{
+  "description": "Switches a pad into full browser viewport and back",
+  "name": "ep_fullscreen",
+  "version": "0.0.5-a2",
+  "author": {
+    "name": "Tudor Ilisoi",
+    "email": "tudorilisoi@yahoo.com"
+  },
+  "contributors": [],
+  "dependencies": {},
+  "engines": {
+    "node": "*"
+  },
+  "devDependencies": {},
+  "maintainers": [
+    {
+      "name": "tudorilisoi",
+      "email": "tudorilisoi@yahoo.com"
+    }
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tudorilisoi/ep_fullscreen.git"
+  },
+  "directories": {},
+  "readme": "README.md",
+  "gitHead": "673b266f361e4449ed8bb860d2b787e76047f74f",
+  "bugs": {
+    "url": "https://github.com/tudorilisoi/ep_fullscreen/issues"
+  },
+  "homepage": "https://github.com/tudorilisoi/ep_fullscreen#readme",
+  "_id": "ep_fullscreen@0.0.5-a1",
+  "scripts": {},
+  "_shasum": "dfee89a57a61c280a93d2657e033406d6de5dc30",
+  "_from": "ep_fullscreen@*"
+}
