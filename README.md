@@ -17,4 +17,5 @@ document.domain='yourdomain.com';
 </script>
 ```
 
-
+As pointed out in this issue, you may have to go an extra mile to get it working in IE:
+<https://github.com/tudorilisoi/ep_fullscreen/issues/2#issue-116146785>
