@@ -26,14 +26,14 @@ var postAceInit = function (hook, context) {
 
     //if not embedded
     if (!window.frameElement) {
-        $('.ep_fullscreen').hide();
+        $('a.ep_fullscreen').hide();
         return;
     }
 
-    $('.ep_fullscreen').attr('title', window._('ep_open_fullscreen'));
-    $('.ep_fullscreen').click(function () {
+    $('a.ep_fullscreen').attr('title', window._('ep_open_fullscreen'));
+    $('a.ep_fullscreen').click(function () {
         toggleFullscreen();
-        $('.ep_fullscreen').attr('title', window._(_full ? 'ep_exit_fullscreen' : 'ep_open_fullscreen'));
+        $('a.ep_fullscreen').attr('title', window._(_full ? 'ep_exit_fullscreen' : 'ep_open_fullscreen'));
         inst.focus();
         var rem = _full ? 'buttonicon-fullscreen' : 'buttonicon-exit-fullscreen';
         var add = !_full ? 'buttonicon-fullscreen' : 'buttonicon-exit-fullscreen';
