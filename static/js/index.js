@@ -1,8 +1,21 @@
 var $ = require('ep_etherpad-lite/static/js/rjquery').$;
 var _ = require('ep_etherpad-lite/static/js/underscore');
 
-var _full = false;
 
+style_full =
+  '.ep_fullscreen_frame { ' +
+  '  z-index: 9999 !important; ' +
+  '  margin: 0 !important; ' +
+  '  border: 0 !important; ' +
+  '  position: fixed !important; ' +
+  '  top: 0 !important; ' +
+  '  left: 0 !important; ' +
+  '  right: 0 !important; ' +
+  '  bottom: 0 !important; ' +
+  '  width: 100% !important; ' +
+  '  height: 100% !important; ' +
+  '} ' +
+  '.ep_fullscreen_body { overflow: hidden !important; }';
 
 //NOTE: must set document.domain='yourdomain' the the parent window
 var top, $top, $frame, $body, pad;
@@ -11,8 +24,9 @@ var documentReady = function () {
     top = window.top.document;
     $top = $(top);
     $body = $('body', $(top));
-    // $frame = $('#epframet1', $body);
     $frame = $(window.frameElement);
+
+    $top.find('html > head').append($('<style>').text(style_full));
     console.log('documentReady', $frame);
 };
 
@@ -21,8 +35,6 @@ var documentReady = function () {
 var postAceInit = function (hook, context) {
     pad = context.pad;
     var inst = context.ace;
-    console.log(arguments);
-    // console.log('postAceInit', window);
 
     //if not embedded
     if (!window.frameElement) {
@@ -32,58 +44,23 @@ var postAceInit = function (hook, context) {
 
     $('a.ep_fullscreen').attr('title', window._('ep_open_fullscreen'));
     $('a.ep_fullscreen').click(function () {
-        toggleFullscreen();
-        $('a.ep_fullscreen').attr('title', window._(_full ? 'ep_exit_fullscreen' : 'ep_open_fullscreen'));
+        $body.toggleClass('ep_fullscreen_body');
+        $frame.toggleClass('ep_fullscreen_frame');
         inst.focus();
-        var rem = _full ? 'buttonicon-fullscreen' : 'buttonicon-exit-fullscreen';
-        var add = !_full ? 'buttonicon-fullscreen' : 'buttonicon-exit-fullscreen';
-        $('.buttonicon', this).removeClass(rem).addClass(add);
+        updateButton();
     });
+    updateButton();
 };
 
-function go() {
-    // $frame.hide();
-}
+function updateButton() {
+    var full = $frame.hasClass('ep_fullscreen_frame');
+    $('a.ep_fullscreen').attr('title', window._(
+    full? 'ep_exit_fullscreen': 'ep_open_fullscreen'));
 
-function setProp(el, prop, val) {
-    var prev = el.css(prop);
-    el.data('ep-prev-style' + prop, prev);
-    el.css(prop, val);
-}
-
-var frameH, scrollTop, styleF;
-
-function restoreProp(el, prop) {
-    var prev = el.data('ep-prev-style' + prop);
-    el.css(prop, prev);
-}
-
-function save() {
-    setProp($body, 'overflow', 'hidden');
-    styleF = $frame.attr('style');
-    $frame.attr('style', 'z-index: 9999; border: 0; position:fixed; top:0; left:0; right:0; bottom:0; width:100%; height:100%');
-    // var wh = $top.height();
-    // frameH = $frame.attr('height');
-    // $frame.attr('height', wh);
-}
-
-function restore() {
-    restoreProp($body, 'overflow', 'hidden');
-    $frame.attr('style', styleF);
-    // $frame.attr('height', frameH);
-}
-
-function toggleFullscreen() {
-    _full = !_full;
-
-    if (_full) {
-        save();
-        go();
-    } else {
-        restore();
-
-    }
-
+    $('a.ep_fullscreen .buttonicon')
+        .toggleClass('buttonicon-fullscreen', !full)
+        .toggleClass('buttonicon-exit-fullscreen', full)
+    ;
 }
 
 
